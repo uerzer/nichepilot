@@ -90,26 +90,43 @@ const adNetworkThresholds = [
   { network: "Raptive", threshold: 100000, current: 55000, color: "#f59e0b", status: "55% there" },
 ];
 
-const automationScripts = [
-  {
-    name: "Trend Scraper",
-    description: "Scrapes Google Trends for rising queries in target niches",
-    language: "python",
-    code: `from browser_use import Agent
-from langchain_openai import ChatOpenAI
-import undetected_chromedriver as uc
+  const automationScripts = [
+    {
+      name: "Trend Scraper",
+      description: "Scrapes Google Trends for rising queries using undetected-chromedriver",
+      language: "python",
+      code: `import undetected_chromedriver as uc
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
-async def scrape_trends():
-    agent = Agent(
-        task="Go to Google Trends, search for 'resin art', extract rising queries with their search volume growth percentage",
-        llm=ChatOpenAI(model="gpt-4o"),
-        browser_config={"headless": False}
-    )
-    result = await agent.run()
-    return result`,
-    status: "ready",
-  },
-  {
+class TrendScraper:
+    def __init__(self, niche="resin art"):
+        self.niche = niche
+        self.options = uc.ChromeOptions()
+        self.options.add_argument('--headless=new')
+        self.driver = uc.Chrome(options=self.options)
+        
+    def scrape_google_trends(self):
+        self.driver.get(f"https://trends.google.com/trends/explore?q={self.niche}&geo=US")
+        WebDriverWait(self.driver, 20).until(
+            EC.presence_of_element_located((By.CSS_SELECTOR, ".widget-container"))
+        )
+        
+        rising_queries = []
+        query_elements = self.driver.find_elements(By.CSS_SELECTOR, ".fe-table tbody tr")
+        
+        for element in query_elements[:20]:
+            cells = element.find_elements(By.TAG_NAME, "td")
+            if len(cells) >= 2:
+                rising_queries.append({
+                    "query": cells[0].text.strip(),
+                    "growth": cells[1].text.strip()
+                })
+        
+        return rising_queries`,
+      status: "ready",
+    },  {
     name: "SERP Analyzer",
     description: "Analyzes top 10 SERP results for content gaps and opportunities",
     language: "python",
