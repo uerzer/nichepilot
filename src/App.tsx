@@ -867,13 +867,20 @@ function ScriptsView() {
         <p className="text-slate-400 mt-1">Ready-to-run scripts for your local environment</p>
       </div>
 
-      <div className="bg-amber-500/10 border border-amber-500/20 rounded-xl p-4 flex items-start gap-3">
-        <AlertCircle className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
-        <div>
-          <p className="text-sm text-amber-300 font-medium">Local Execution Required</p>
-          <p className="text-xs text-amber-300/70 mt-1">
-            These scripts require Python 3.10+, API keys (OpenAI, DataForSEO), and a local Chrome installation. Copy and run on your machine.
+      <div className="bg-gradient-to-r from-indigo-600/10 to-purple-600/10 border border-indigo-500/20 rounded-xl p-5 flex items-start gap-4">
+        <div className="w-10 h-10 rounded-xl bg-indigo-600/20 flex items-center justify-center flex-shrink-0">
+          <Zap className="w-5 h-5 text-indigo-400" />
+        </div>
+        <div className="flex-1">
+          <p className="text-sm text-indigo-300 font-medium mb-2">Single-File Autopilot Ready</p>
+          <p className="text-xs text-slate-400 mb-3">
+            Copy <code className="text-indigo-300 bg-indigo-500/10 px-1.5 py-0.5 rounded">autopilot.py</code> to your machine, set your API keys, and run. That's it.
           </p>
+          <div className="bg-black/40 rounded-lg p-3 font-mono text-xs text-emerald-300 overflow-x-auto">
+            pip install undetected-chromedriver openai requests schedule && \<br/>
+            export OPENAI_API_KEY="sk-..." && \<br/>
+            python3 autopilot.py --loop 3600
+          </div>
         </div>
       </div>
 
