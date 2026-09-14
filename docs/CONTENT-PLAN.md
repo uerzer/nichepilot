@@ -7,8 +7,8 @@ Rules: work top to bottom within a cluster before opening a new one. `$` = buyer
 - [x] best-resin-art-kit-beginners ($)
 - [x] resin-art-supplies-list ($)
 - [x] epoxy-resin-cure-times
-- [ ] epoxy-vs-polyester-vs-polyurethane-resin
-- [ ] resin-art-cost-breakdown-first-year ($)
+- [x] epoxy-vs-polyester-vs-polyurethane-resin
+- [x] resin-art-cost-breakdown-first-year ($)
 - [ ] best-epoxy-resin-brands-compared ($)
 - [ ] resin-mixing-ratios-explained
 - [ ] workspace-setup-small-apartments
