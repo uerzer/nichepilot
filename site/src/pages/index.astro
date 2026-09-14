@@ -1,48 +1,225 @@
 ---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
+import FormattedDate from '../components/FormattedDate.astro';
 import Header from '../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const posts = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+const [featured, ...rest] = posts;
+const startHereSlugs = ['how-to-start-resin-art', 'resin-art-supplies-list', 'best-resin-art-kit-beginners'];
+const startHere = startHereSlugs
+	.map((slug) => posts.find((p) => p.id.replace(/\.mdx?$/, '') === slug))
+	.filter(Boolean);
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<style>
+			.hero {
+				padding: 3rem 0 0;
+			}
+			.hero h1 {
+				font-size: clamp(2.6rem, 6vw, 4.5rem);
+				margin: 0 0 0.8rem;
+			}
+			.hero p {
+				font-size: 1.2rem;
+				color: var(--flint-soft);
+				max-width: 38rem;
+				margin: 0;
+			}
+			.featured {
+				display: grid;
+				grid-template-columns: 1.1fr 1fr;
+				gap: 2rem;
+				align-items: center;
+				background: var(--card);
+				border: 1px solid var(--line);
+				border-radius: 10px;
+				padding: 1.6rem;
+				margin-top: 2.2rem;
+				text-decoration: none;
+				color: inherit;
+			}
+			.featured:hover h2 {
+				color: var(--rust);
+			}
+			.featured h2 {
+				font-size: 1.9rem;
+				margin: 0 0 0.6rem;
+			}
+			.featured p {
+				color: var(--flint-soft);
+				margin: 0 0 0.8rem;
+			}
+			.section-head {
+				display: flex;
+				align-items: baseline;
+				justify-content: space-between;
+				margin: 3rem 0 1.2rem;
+			}
+			.section-head h2 {
+				font-size: 1.4rem;
+				margin: 0;
+			}
+			.section-head a {
+				font-size: 0.9rem;
+				font-weight: 700;
+				text-transform: uppercase;
+				letter-spacing: 0.06em;
+				text-decoration: none;
+			}
+			.grid {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 1.4rem;
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+			.card {
+				background: var(--card);
+				border: 1px solid var(--line);
+				border-radius: 10px;
+				overflow: hidden;
+			}
+			.card a {
+				display: block;
+				text-decoration: none;
+				color: inherit;
+				height: 100%;
+			}
+			.card a:hover h3 {
+				color: var(--rust);
+			}
+			.card .body {
+				padding: 1.1rem 1.2rem 1.3rem;
+			}
+			.card h3 {
+				font-size: 1.12rem;
+				margin: 0 0 0.4rem;
+			}
+			.card .date {
+				color: var(--flint-soft);
+				font-size: 0.85rem;
+				margin: 0;
+			}
+			.starter {
+				border: 2px solid var(--flint);
+				border-radius: 10px;
+				padding: 1.6rem;
+				margin-top: 3rem;
+			}
+			.starter h2 {
+				margin: 0 0 0.4rem;
+				font-size: 1.4rem;
+			}
+			.starter > p {
+				color: var(--flint-soft);
+				margin: 0 0 1.2rem;
+			}
+			.starter ol {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				counter-reset: step;
+			}
+			.starter li {
+				counter-increment: step;
+				padding: 0.7rem 0;
+				border-top: 1px solid var(--line);
+				display: flex;
+				gap: 1rem;
+				align-items: baseline;
+			}
+			.starter li::before {
+				content: counter(step, decimal-leading-zero);
+				font-weight: 700;
+				color: var(--rust);
+				flex-shrink: 0;
+			}
+			.starter li a {
+				color: var(--flint);
+				font-weight: 700;
+				text-decoration: none;
+				font-size: 1.05rem;
+			}
+			.starter li a:hover {
+				color: var(--rust);
+			}
+			@media (max-width: 860px) {
+				.featured {
+					grid-template-columns: 1fr;
+				}
+				.grid {
+					grid-template-columns: 1fr;
+				}
+			}
+		</style>
 	</head>
 	<body>
 		<Header />
 		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This template
-				serves as a lightweight, minimally-styled starting point for anyone looking to build a personal
-				website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
+			<section class="hero">
+				<span class="kicker">A practical resin art journal</span>
+				<h1>Learn resin. Skip the ruined pours.</h1>
+				<p>Step-by-step guides on supplies, techniques, and fixing what went wrong — written for beginners, useful past that.</p>
+			</section>
+
+			{featured && (
+				<a class="featured" href={`${base}/blog/${featured.id}/`}>
+					{featured.data.heroImage && (
+						<Image width={640} height={360} src={featured.data.heroImage} alt="" />
+					)}
+					<div>
+						<span class="kicker">Latest guide</span>
+						<h2>{featured.data.title}</h2>
+						<p>{featured.data.description}</p>
+						<p class="date"><FormattedDate date={featured.data.pubDate} /></p>
+					</div>
+				</a>
+			)}
+
+			<div class="section-head">
+				<h2>Recent guides</h2>
+				<a href={`${base}/blog/`}>All guides</a>
+			</div>
+			<ul class="grid">
+				{rest.slice(0, 6).map((post) => (
+					<li class="card">
+						<a href={`${base}/blog/${post.id}/`}>
+							{post.data.heroImage && (
+								<Image width={480} height={270} src={post.data.heroImage} alt="" />
+							)}
+							<div class="body">
+								<h3>{post.data.title}</h3>
+								<p class="date"><FormattedDate date={post.data.pubDate} /></p>
+							</div>
+						</a>
+					</li>
+				))}
 			</ul>
-			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
+
+			<section class="starter">
+				<span class="kicker">New here</span>
+				<h2>Start in this order</h2>
+				<p>Three guides. One weekend. A finished set of coasters.</p>
+				<ol>
+					{startHere.map((post) => post && (
+						<li>
+							<a href={`${base}/blog/${post.id}/`}>{post.data.title}</a>
+						</li>
+					))}
+				</ol>
+			</section>
 		</main>
 		<Footer />
 	</body>

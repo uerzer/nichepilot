@@ -2,7 +2,7 @@
 title: 'Sticky Resin? Diagnose and Fix Every Tacky Cure Problem'
 description: 'Why resin stays sticky — off-ratio mixing, cold rooms, humidity, over-pigmenting — with the exact fix for each situation.'
 pubDate: 'Sep 14 2026'
-heroImage: '../../assets/blog-placeholder-2.jpg'
+heroImage: '../../assets/covers/demold.png'
 ---
 
 A piece that's still tacky after two days is gutting. But "sticky" has four distinct causes with different fixes — and two of them are recoverable. Diagnose before you trash it.

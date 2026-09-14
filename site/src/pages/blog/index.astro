@@ -7,6 +7,7 @@ import FormattedDate from '../../components/FormattedDate.astro';
 import Header from '../../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
 
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
@@ -15,73 +16,61 @@ const posts = (await getCollection('blog')).sort(
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<BaseHead title={`Guides — ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
 		<style>
-			main {
-				width: 960px;
+			.archive-head {
+				padding: 2rem 0 0;
 			}
-			ul {
-				display: flex;
-				flex-wrap: wrap;
-				gap: 2rem;
-				list-style-type: none;
+			.archive-head h1 {
+				font-size: clamp(2rem, 4.5vw, 3rem);
+				margin: 0 0 0.5rem;
+			}
+			.archive-head p {
+				color: var(--flint-soft);
+				margin: 0 0 0.5rem;
+				font-size: 1.1rem;
+			}
+			.rows {
+				list-style: none;
 				margin: 0;
 				padding: 0;
 			}
-			ul li {
-				width: calc(50% - 1rem);
+			.rows li {
+				border-top: 1px solid var(--line);
 			}
-			ul li * {
+			.rows li:last-child {
+				border-bottom: 1px solid var(--line);
+			}
+			.rows a {
+				display: grid;
+				grid-template-columns: 200px 1fr;
+				gap: 1.4rem;
+				align-items: center;
+				padding: 1.2rem 0;
 				text-decoration: none;
-				transition: 0.2s ease;
+				color: inherit;
 			}
-			ul li:first-child {
-				width: 100%;
-				margin-bottom: 1rem;
-				text-align: center;
+			.rows a:hover h2 {
+				color: var(--rust);
 			}
-			ul li:first-child img {
-				width: 100%;
+			.rows h2 {
+				font-size: 1.25rem;
+				margin: 0 0 0.3rem;
 			}
-			ul li:first-child .title {
-				font-size: 2.369rem;
+			.rows .desc {
+				color: var(--flint-soft);
+				margin: 0 0 0.3rem;
+				font-size: 0.98rem;
 			}
-			ul li img {
-				margin-bottom: 0.5rem;
-				border-radius: 12px;
-			}
-			ul li a {
-				display: block;
-			}
-			.title {
+			.rows .date {
+				color: var(--flint-soft);
+				font-size: 0.85rem;
 				margin: 0;
-				color: rgb(var(--black));
-				line-height: 1;
-			}
-			.date {
-				margin: 0;
-				color: rgb(var(--gray));
-			}
-			ul li a:hover h4,
-			ul li a:hover .date {
-				color: rgb(var(--accent));
-			}
-			ul a:hover img {
-				box-shadow: var(--box-shadow);
 			}
 			@media (max-width: 720px) {
-				ul {
-					gap: 0.5em;
-				}
-				ul li {
-					width: 100%;
-					text-align: center;
-				}
-				ul li:first-child {
-					margin-bottom: 0;
-				}
-				ul li:first-child .title {
-					font-size: 1.563em;
+				.rows a {
+					grid-template-columns: 1fr;
+					gap: 0.8rem;
 				}
 			}
 		</style>
@@ -89,25 +78,28 @@ const posts = (await getCollection('blog')).sort(
 	<body>
 		<Header />
 		<main>
-			<section>
-				<ul>
-					{
-						posts.map((post) => (
-							<li>
-								<a href={`/blog/${post.id}/`}>
-									{post.data.heroImage && (
-										<Image width={720} height={360} src={post.data.heroImage} alt="" />
-									)}
-									<h4 class="title">{post.data.title}</h4>
-									<p class="date">
-										<FormattedDate date={post.data.pubDate} />
-									</p>
-								</a>
-							</li>
-						))
-					}
-				</ul>
-			</section>
+			<div class="archive-head">
+				<span class="kicker">Archive</span>
+				<h1>All guides</h1>
+				<p>{posts.length} practical guides on resin art. New ones weekly.</p>
+				<hr class="rule" />
+			</div>
+			<ul class="rows">
+				{posts.map((post) => (
+					<li>
+						<a href={`${base}/blog/${post.id}/`}>
+							{post.data.heroImage && (
+								<Image width={400} height={225} src={post.data.heroImage} alt="" />
+							)}
+							<div>
+								<h2>{post.data.title}</h2>
+								<p class="desc">{post.data.description}</p>
+								<p class="date"><FormattedDate date={post.data.pubDate} /></p>
+							</div>
+						</a>
+					</li>
+				))}
+			</ul>
 		</main>
 		<Footer />
 	</body>

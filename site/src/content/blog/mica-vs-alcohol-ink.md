@@ -2,7 +2,7 @@
 title: 'Mica Powder vs Alcohol Ink: Which Resin Colorant to Use'
 description: 'The real differences between mica powders and alcohol inks in epoxy resin — effects, difficulty, cost, and when to use each.'
 pubDate: 'Sep 14 2026'
-heroImage: '../../assets/blog-placeholder-2.jpg'
+heroImage: '../../assets/covers/color.png'
 ---
 
 Color is where resin art gets addictive, and the two main colorants behave completely differently. Picking the wrong one for your project is a classic beginner frustration. Here's the breakdown.

@@ -2,7 +2,7 @@
 title: 'Silicone Molds for Resin Art: How to Choose and Care for Them'
 description: 'Types of silicone molds for resin — coasters, trays, jewelry — what to look for, how to make them last, and when to replace them.'
 pubDate: 'Sep 14 2026'
-heroImage: '../../assets/blog-placeholder-1.jpg'
+heroImage: '../../assets/covers/molds.png'
 ---
 
 Molds decide the shape of everything you make, and silicone is the only material beginners should consider. Here's how to buy right and make them last hundreds of pours.

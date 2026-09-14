@@ -2,7 +2,7 @@
 title: 'Ocean Resin Art Tutorial: Beach Waves That Actually Look Real'
 description: 'Step-by-step ocean resin waves — the two-layer technique, white pigment selection, heat gun angles, and timing that makes cells.'
 pubDate: 'Sep 14 2026'
-heroImage: '../../assets/blog-placeholder-1.jpg'
+heroImage: '../../assets/covers/ocean.png'
 ---
 
 Ocean waves are the most-requested resin effect and the most commonly botched. Milky smears instead of crisp lacing almost always come down to timing and pigment choice. Here's the method that works.

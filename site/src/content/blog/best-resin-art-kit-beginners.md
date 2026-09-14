@@ -2,7 +2,7 @@
 title: 'Best Resin Art Kit for Beginners: What to Buy in 2026'
 description: 'A practical guide to choosing your first resin art kit — resin types, safety gear, molds, and the mistakes beginners should avoid.'
 pubDate: 'Sep 13 2026'
-heroImage: '../../assets/blog-placeholder-2.jpg'
+heroImage: '../../assets/covers/kit.png'
 ---
 
 Starting resin art is simple, but buying your first kit is where most beginners go wrong. They either overspend on professional gear they don't need, or buy a suspiciously cheap kit that cures cloudy and yellows in a month. This guide covers exactly what to look for.

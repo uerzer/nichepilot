@@ -2,7 +2,7 @@
 title: 'Resin Art Bubbles: Why They Happen and How to Fix Them'
 description: 'Every cause of bubbles in epoxy resin — mixing, temperature, porous inclusions — and the exact fix for each.'
 pubDate: 'Sep 14 2026'
-heroImage: '../../assets/blog-placeholder-3.jpg'
+heroImage: '../../assets/covers/bubbles.png'
 ---
 
 Bubbles are the number one reason beginner resin pieces look amateur. The good news: every bubble has a specific cause, and every cause has a fix. Here's the full diagnostic.

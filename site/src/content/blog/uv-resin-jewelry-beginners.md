@@ -2,7 +2,7 @@
 title: 'UV Resin Jewelry for Beginners: Start to Finish'
 description: 'Make your first UV resin pendant today — supplies, layering technique, curing, and the mistakes that ruin small pieces.'
 pubDate: 'Sep 14 2026'
-heroImage: '../../assets/blog-placeholder-3.jpg'
+heroImage: '../../assets/covers/jewelry.png'
 ---
 
 UV resin is the fast track of the resin world: no measuring, no mixing, cured in minutes under a lamp. It's the best entry point for jewelry-sized pieces. Here's the complete first project.

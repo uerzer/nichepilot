@@ -2,7 +2,7 @@
 title: 'Resin Art Supplies List: Everything You Actually Need'
 description: 'The complete resin art supplies checklist — essentials, nice-to-haves, safety gear, and what to skip until you are selling work.'
 pubDate: 'Sep 14 2026'
-heroImage: '../../assets/blog-placeholder-2.jpg'
+heroImage: '../../assets/covers/supplies.png'
 ---
 
 Resin supply lists online fall into two traps: the 6-item list that leaves you reordering mid-project, and the 40-item list padded with affiliate links. This is the middle path — everything you need, nothing you don't, clearly tiered.

@@ -2,7 +2,7 @@
 title: 'Resin Art Safety: The Complete Guide (No Scare Tactics)'
 description: 'Real resin safety without hype — what the actual risks are, the exact gear that covers them, and the ventilation setup that works.'
 pubDate: 'Sep 14 2026'
-heroImage: '../../assets/blog-placeholder-4.jpg'
+heroImage: '../../assets/covers/safety.png'
 ---
 
 Resin safety advice online splits into "it's basically water" and "you'll die." Both are wrong. Here's the evidence-based middle: real risks, proportional precautions.

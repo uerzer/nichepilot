@@ -2,7 +2,7 @@
 title: 'How to Start Resin Art: A Complete Beginner Guide'
 description: 'Everything you need to start resin art from zero — supplies, workspace setup, your first pour, and curing basics.'
 pubDate: 'Sep 14 2026'
-heroImage: '../../assets/blog-placeholder-4.jpg'
+heroImage: '../../assets/covers/first-pour.png'
 ---
 
 Resin art looks intimidating, but the learning curve is short. Most people go from unboxing to a decent set of coasters in a single weekend. Here's the full path from zero to first finished piece.

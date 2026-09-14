@@ -2,7 +2,7 @@
 title: 'Epoxy Resin Cure Times: How Long to Wait (and Why)'
 description: 'Working time, touch-dry, full cure — what each stage means, the factors that speed or slow curing, and when to demold.'
 pubDate: 'Sep 14 2026'
-heroImage: '../../assets/blog-placeholder-1.jpg'
+heroImage: '../../assets/covers/cure.png'
 ---
 
 "How long does resin take to dry?" has three different answers, because curing has stages. Pulling a piece at the wrong stage ruins it. Here's the timeline.
