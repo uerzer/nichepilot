@@ -1,0 +1,86 @@
+/* Poured — resin art journal. No-Mirage "Over & Over". */
+
+:root {
+	--paper: #e8e4dc;
+	--paper-deep: #ded9cc;
+	--flint: #23282d;
+	--flint-soft: #4a5158;
+	--rust: #d6492b;
+	--rust-dark: #a8341d;
+	--line: #c9c3b4;
+	--card: #f2efe7;
+}
+* {
+	box-sizing: border-box;
+}
+html {
+	background: var(--paper);
+}
+body {
+	margin: 0;
+	padding: 0;
+	background: var(--paper);
+	color: var(--flint);
+	font-family: var(--font-atkinson), system-ui, sans-serif;
+	font-size: 18px;
+	line-height: 1.65;
+	-webkit-font-smoothing: antialiased;
+}
+main {
+	width: 1080px;
+	max-width: calc(100% - 2.5rem);
+	margin: 0 auto;
+	padding: 2.5rem 0 4rem;
+}
+h1, h2, h3, h4 {
+	line-height: 1.15;
+	letter-spacing: -0.01em;
+	margin: 0 0 0.6rem 0;
+}
+a {
+	color: var(--rust);
+	text-decoration-thickness: 1px;
+	text-underline-offset: 3px;
+}
+a:hover {
+	color: var(--rust-dark);
+}
+img {
+	max-width: 100%;
+	height: auto;
+	border-radius: 6px;
+}
+.kicker {
+	display: block;
+	font-size: 0.78rem;
+	font-weight: 700;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	color: var(--rust);
+	margin-bottom: 0.6rem;
+}
+.rule {
+	border: none;
+	border-top: 2px solid var(--flint);
+	margin: 1.2rem 0 2rem;
+}
+.sr-only {
+	border: 0;
+	padding: 0;
+	margin: 0;
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	white-space: nowrap;
+}
+@media (max-width: 720px) {
+	body {
+		font-size: 17px;
+	}
+	main {
+		padding: 1.5rem 0 3rem;
+	}
+}

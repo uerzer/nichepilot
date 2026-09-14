@@ -1,0 +1,16 @@
+{
+  "openai_api_key": "sk-your-key-here",
+  "anthropic_api_key": "sk-ant-your-key-here",
+  "dataforseo_login": "your-login",
+  "dataforseo_password": "your-password",
+  "wordpress_url": "https://yoursite.com",
+  "wordpress_token": "your-wp-token",
+  "google_search_console": {
+    "credentials_file": "gsc-credentials.json",
+    "site_url": "https://yoursite.com"
+  },
+  "niche": "resin art",
+  "target_keywords_per_day": 5,
+  "articles_per_day": 2,
+  "social_posts_per_day": 3
+}

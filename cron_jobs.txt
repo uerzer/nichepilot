@@ -1,0 +1,27 @@
+# NichePilot Cron Jobs
+# Install with: crontab cron_jobs.txt
+# Edit path: replace /path/to/nichepilot with your actual path
+
+# Trend Scraper - Every 6 hours
+0 */6 * * * cd /path/to/nichepilot && source venv/bin/activate && python3 scripts/trend_scraper.py >> logs/cron_trends.log 2>&1
+
+# SERP Analyzer - Daily at 8am
+0 8 * * * cd /path/to/nichepilot && source venv/bin/activate && python3 scripts/serp_analyzer.py >> logs/cron_serp.log 2>&1
+
+# Content Generator - Daily at 10am
+0 10 * * * cd /path/to/nichepilot && source venv/bin/activate && python3 scripts/content_generator.py >> logs/cron_content.log 2>&1
+
+# Social Distributor - 3x daily (12pm, 5pm, 9pm)
+0 12,17,21 * * * cd /path/to/nichepilot && source venv/bin/activate && python3 scripts/social_distributor.py >> logs/cron_social.log 2>&1
+
+# Ranking Monitor - Daily at 6pm
+0 18 * * * cd /path/to/nichepilot && source venv/bin/activate && python3 scripts/ranking_monitor.py >> logs/cron_rankings.log 2>&1
+
+# Directory Builder - Weekly on Sunday at midnight
+0 0 * * 0 cd /path/to/nichepilot && source venv/bin/activate && python3 scripts/directory_builder.py >> logs/cron_directory.log 2>&1
+
+# Full Pipeline - Weekly on Saturday at 2am
+0 2 * * 6 cd /path/to/nichepilot && bash run_all.sh >> logs/cron_full.log 2>&1
+
+# Log Rotation - Daily at 3am (keep last 30 days)
+0 3 * * * find /path/to/nichepilot/logs -name "*.log" -mtime +30 -delete
