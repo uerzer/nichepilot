@@ -1,0 +1,43 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [autonomous-seo-agent-pipeline-ab6d9]
+    paths: ['site/**']
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+
+      - run: npm ci
+        working-directory: site
+
+      - run: npm run build
+        working-directory: site
+
+      - name: Publish to gh-pages
+        run: |
+          rm -rf /tmp/dist-pub && mkdir -p /tmp/dist-pub
+          cp -r site/dist/. /tmp/dist-pub/
+          cd /tmp/dist-pub
+          git init -q -b gh-pages
+          git config user.name "nichepilot-deploy"
+          git config user.email "deploy@nichepilot.local"
+          git add -A
+          git commit -qm "deploy $GITHUB_SHA"
+          git remote add origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git push origin gh-pages --force
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GITHUB_SHA: ${{ github.sha }}
