@@ -9,17 +9,17 @@ Rules: work top to bottom within a cluster before opening a new one. `$` = buyer
 - [x] epoxy-resin-cure-times
 - [x] epoxy-vs-polyester-vs-polyurethane-resin
 - [x] resin-art-cost-breakdown-first-year ($)
-- [ ] best-epoxy-resin-brands-compared ($)
+- [x] best-epoxy-resin-brands-compared ($)
 - [ ] resin-mixing-ratios-explained
 - [ ] workspace-setup-small-apartments
 - [ ] resin-art-glossary-terms
 - [ ] how-to-store-resin-and-hardener
-- [ ] resin-shelf-life-signs-expired
+- [x] resin-shelf-life-signs-expired
 - [ ] best-respirator-for-resin-art ($)
-- [ ] resin-art-with-kids-safety-rules
-- [ ] first-5-projects-ranked-by-difficulty
-- [ ] how-long-does-resin-smell-last
-- [ ] resin-art-in-winter-cold-weather-guide
+- [x] resin-art-with-kids-safety-rules
+- [x] first-5-projects-ranked-by-difficulty
+- [x] how-long-does-resin-smell-last
+- [x] resin-art-in-winter-cold-weather-guide
 - [ ] resin-art-in-humidity-guide
 - [ ] how-to-price-resin-art-to-sell
 - [ ] resin-art-business-basics-etsy-vs-local
@@ -29,7 +29,7 @@ Rules: work top to bottom within a cluster before opening a new one. `$` = buyer
 - [x] mica-vs-alcohol-ink
 - [x] uv-resin-jewelry-beginners ($)
 - [x] silicone-molds-guide ($)
-- [ ] dirty-pour-technique-step-by-step
+- [x] dirty-pour-technique-step-by-step
 - [ ] resin-geode-art-tutorial
 - [ ] petri-dish-resin-effect-guide
 - [ ] resin-river-table-mini-guide
