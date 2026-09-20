@@ -38,7 +38,7 @@ Realistic hobby burn: **$25–50/month**. Daily pourers double it.
 
 Total sensible year-one spend: **$400–700** including startup. Anyone spending more is collecting gear, not making art.
 
-## [AFFILIATE: beginner epoxy kits] — What to Buy
+## What to Buy
 
 When comparing kits, price per milliliter of resin is the only number that matters — ignore mold counts and color counts in the headline. A $45 kit with 1L of resin beats a $40 kit with 500ml every time, since resin is 70%+ of your ongoing cost.
 
