@@ -1,0 +1,106 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import FormattedDate from '../../components/FormattedDate.astro';
+import Header from '../../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const posts = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`Guides — ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+		<style>
+			.archive-head {
+				padding: 2rem 0 0;
+			}
+			.archive-head h1 {
+				font-size: clamp(2rem, 4.5vw, 3rem);
+				margin: 0 0 0.5rem;
+			}
+			.archive-head p {
+				color: var(--flint-soft);
+				margin: 0 0 0.5rem;
+				font-size: 1.1rem;
+			}
+			.rows {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+			.rows li {
+				border-top: 1px solid var(--line);
+			}
+			.rows li:last-child {
+				border-bottom: 1px solid var(--line);
+			}
+			.rows a {
+				display: grid;
+				grid-template-columns: 200px 1fr;
+				gap: 1.4rem;
+				align-items: center;
+				padding: 1.2rem 0;
+				text-decoration: none;
+				color: inherit;
+			}
+			.rows a:hover h2 {
+				color: var(--rust);
+			}
+			.rows h2 {
+				font-size: 1.25rem;
+				margin: 0 0 0.3rem;
+			}
+			.rows .desc {
+				color: var(--flint-soft);
+				margin: 0 0 0.3rem;
+				font-size: 0.98rem;
+			}
+			.rows .date {
+				color: var(--flint-soft);
+				font-size: 0.85rem;
+				margin: 0;
+			}
+			@media (max-width: 720px) {
+				.rows a {
+					grid-template-columns: 1fr;
+					gap: 0.8rem;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<div class="archive-head">
+				<span class="kicker">Archive</span>
+				<h1>All guides</h1>
+				<p>{posts.length} practical guides on resin art. New ones weekly.</p>
+				<hr class="rule" />
+			</div>
+			<ul class="rows">
+				{posts.map((post) => (
+					<li>
+						<a href={`${base}/blog/${post.id}/`}>
+							{post.data.heroImage && (
+								<Image width={400} height={225} src={post.data.heroImage} alt="" />
+							)}
+							<div>
+								<h2>{post.data.title}</h2>
+								<p class="desc">{post.data.description}</p>
+								<p class="date"><FormattedDate date={post.data.pubDate} /></p>
+							</div>
+						</a>
+					</li>
+				))}
+			</ul>
+		</main>
+		<Footer />
+	</body>
+</html>
