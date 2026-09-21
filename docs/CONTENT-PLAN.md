@@ -30,16 +30,16 @@ Rules: work top to bottom within a cluster before opening a new one. `$` = buyer
 - [x] uv-resin-jewelry-beginners ($)
 - [x] silicone-molds-guide ($)
 - [x] dirty-pour-technique-step-by-step
-- [ ] resin-geode-art-tutorial
-- [ ] petri-dish-resin-effect-guide
-- [ ] resin-river-table-mini-guide
-- [ ] galaxy-resin-art-tutorial
-- [ ] marble-effect-resin-tutorial
-- [ ] resin-and-wood-combining-guide
+- [x] resin-geode-art-tutorial
+- [x] petri-dish-resin-effect-guide
+- [x] resin-river-table-mini-guide
+- [x] galaxy-resin-art-tutorial
+- [x] marble-effect-resin-tutorial
+- [x] resin-and-wood-combining-guide
 - [ ] embedding-flowers-in-resin
-- [ ] embedding-photos-in-resin
-- [ ] gold-leaf-in-resin-technique
-- [ ] resin-layering-for-depth
+- [x] embedding-photos-in-resin
+- [x] gold-leaf-in-resin-technique
+- [x] resin-layering-for-depth
 - [ ] matte-vs-glossy-resin-finish
 - [ ] how-to-sand-and-polish-resin
 - [ ] doming-technique-glass-finish
@@ -70,7 +70,7 @@ Rules: work top to bottom within a cluster before opening a new one. `$` = buyer
 
 ## Cluster 4: Projects (20)
 - [ ] diy-resin-coasters-start-to-finish
-- [ ] resin-bookmarks-tutorial
+- [x] resin-bookmarks-tutorial
 - [ ] resin-keychains-tutorial
 - [ ] resin-earrings-beginners ($)
 - [ ] resin-pendant-necklaces-guide
@@ -80,12 +80,12 @@ Rules: work top to bottom within a cluster before opening a new one. `$` = buyer
 - [ ] resin-christmas-ornaments
 - [ ] resin-halloween-projects
 - [ ] resin-wedding-decor-favors
-- [ ] resin-pet-tags-diy
+[- [x]] resin-pet-tags-diy
 - [ ] resin-phone-grips-and-cases
 - [ ] resin-chess-set-project
-- [ ] resin-lampshade-and-tealight-holders
-- [ ] resin-bottle-openers-and-knobs
-- [ ] resin-planter-pots
+- [x] resin-lampshade-and-tealight-holders
+- [x] resin-bottle-openers-and-knobs
+- [x] resin-planter-pots
 - [ ] resin-soap-dishes-and-bathroom-set
 - [ ] resin-magnets-tutorial
 - [ ] resin-garden-stakes-and-outdoor-art
